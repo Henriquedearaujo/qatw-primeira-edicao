@@ -58,6 +58,10 @@ O projeto utiliza Docker Compose para gerenciar os serviços necessários para o
    ```sh
    npx playwright test --ui
    ```
+5. Para rodar os testes em modo debug (visualizando a execução de cada teste):
+   ```sh
+   npx playwright test --debug
+   ```
 
 ## 📄 Licença
 Este projeto está sob a licença MIT.
