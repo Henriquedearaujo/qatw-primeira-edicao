@@ -11,12 +11,14 @@ const db = pgp({
     database: "UserDB",
 })
 
-export async function obterCodigo2FA() {
+export async function obterCodigo2FA(cpf) {
   const query = `
-        SELECT code
-	    FROM public."TwoFactorCode"
-	    ORDER BY id DESC
-	    limit 1;
+        SELECT t.code
+        FROM public."TwoFactorCode" t
+        JOIN public."User" u ON u."id" = t."userId"
+        WHERE u."cpf" = '${cpf}'
+        ORDER BY t."id" DESC
+        LIMIT 1;
     `;
 
   const result = await db.oneOrNone(query);
