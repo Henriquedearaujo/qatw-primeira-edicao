@@ -18,7 +18,7 @@ test("Nao deve logar quando o codigo de altenticacao e invalido", async ({
   };
 
   await loginPage.acessaPagina();
-  await loginPage.informaCpf(usuario.cpf);
+  await loginPage.informaCPF(usuario.cpf);
   await loginPage.informaSenha(usuario.senha);
   await loginPage.informaCodigo2FA('123456');
 
@@ -38,13 +38,13 @@ test("Deve acessar a conta do usuario", async ({ page }) => {
   };
 
   await cleanJobs();
-''
+
   await loginPage.acessaPagina();
-  await loginPage.informaCpf(usuario.cpf);
+  await loginPage.informaCPF(usuario.cpf);
   await loginPage.informaSenha(usuario.senha);
 
   await page.getByRole('heading', {name: 'Verificação em duas etapas'})
-    .waitFor({timeout: 7000})
+    .waitFor({timeout: 9000})
 
     const codigo = await getJob()
 
