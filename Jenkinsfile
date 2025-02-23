@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Node.js Deps') {
             steps {
-                sh 'apt-get update && apt-get install -y npm'
+                sh 'npm install'
             }
         }
         stage('E2E Tests') {
